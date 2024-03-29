@@ -52,6 +52,14 @@ public class PlayerInput : MonoBehaviour
     #region メソッド  
 
     /// <summary>  
+    /// 更新前処理  
+    /// </summary>
+    private void Start()
+    {
+        
+    }
+
+    /// <summary>  
     /// 更新処理  
     /// </summary>  
     private void Update ()
@@ -59,6 +67,8 @@ public class PlayerInput : MonoBehaviour
         // 加速度センサーの取得
         xPos = _speed * Input.acceleration.x;
         yPos = _speed * Input.acceleration.y;
+
+        Debug.Log("xPos : " + xPos);
 
         // Rayが壁に当たっていたら移動量を0にする
         if (xPos > 0 && PlusXPos())
